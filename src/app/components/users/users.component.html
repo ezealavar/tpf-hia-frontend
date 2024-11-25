@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row w-100">
+    <h1 class="pt-3 pb-3">Usuarios registrados</h1>
+
+    <!-- tarjeta-local.component.html -->
+    <div class="card m-1 position-relative" style="max-width: 400px;" *ngFor="let locales of usuarios; let i = index">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="../../../assets/programer.png" class="img-fluid rounded-start full-img programer pt-2" alt="Descripción de la imagen">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ locales.name }}</h5>
+            <p class="card-text text-wrap"><strong>Email:</strong> {{ locales.email }}</p>
+            <span><strong>Fecha de Suscripción:</strong> {{ locales.created_at | date:'dd/MM/yyyy HH:mm' }} </span><br>   
+
+            <!-- Iconos flotantes -->
+            <div class="position-absolute bottom-0 end-0 p-2">
+             <!--  <button class="btn btn-outline-warning m-1"   (click)="crearUsuario()" >
+                <i class="bi bi-pencil-fill"></i>
+              </button> -->
+              <button class="btn btn-outline-danger m-1" (click)="deleteUsuario(locales.id)">
+                <i class="bi bi-trash-fill"></i>
+              </button>             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
