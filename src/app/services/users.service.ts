@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UsersService {
 
-  private urlBase = 'https://backendtf-cddu.onrender.com/users'
+  private urlBase = 'http://localhost:4000/users'
 
   constructor(private http: HttpClient) { }
 
